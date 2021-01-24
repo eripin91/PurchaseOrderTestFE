@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PurchaseOrder>
+@{ ViewBag.Title = "All Purchase Orders";}
+
+<h2>All Reservations</h2>
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>PO Number</th>
+            <th>Company Name</th>
+            <th>Vendor Name</th>
+            <th>Shipto Name</th>
+            <th>Created Date</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+        <tr>
+            <td>@r.PurchaseOrderNo</td>
+            <td>@r.CompanyName</td>
+            <td>@r.VendorContactName</td>
+            <td>@r.ShipToName</td>
+            <td>@r.CreatedOn</td>
+            <td><a href="#">Edit</a></td>
+            <td><a href="#">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
